@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092654">
+<meta name="description" content="+2 UHS KARUAJ School App - पढ़ाई, नोटिस, होमवर्क और परीक्षा की जानकारी।">
+<title>+2 UHS KARUAJ | School App</title>
+
+<style>
+:root {
+  --navy: #092654;
+  --blue: #123f7a;
+  --gold: #f5c542;
+  --bg: #f3f6fc;
+  --card: #ffffff;
+  --text: #18243a;
+  --muted: #68758b;
+  --border: #e1e7f0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, "Noto Sans Devanagari", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  background: linear-gradient(145deg, #061b3b, #164783);
+  color: white;
+  text-align: center;
+  padding: 28px 16px 24px;
+  border-bottom: 5px solid var(--gold);
+}
+.logo {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  border: 3px solid var(--gold);
+}
+.school-name {
+  margin: 14px 0 4px;
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 850;
+}
+.location {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.motto {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 16px;
+  color: #ffe59a;
+  border: 1px solid #d9b74e;
+  border-radius: 30px;
+  font-weight: 700;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 11px;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+nav a {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--navy);
+  background: #eef3fb;
+  padding: 9px 13px;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 700;
+}
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 16px;
+}
+.welcome {
+  background: linear-gradient(120deg, #fff7dd, white);
+  border: 1px solid #f0dfac;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 8px 0 22px;
+}
+.welcome h2 { margin: 0 0 8px; color: var(--navy); }
+.welcome p { margin: 0; line-height: 1.7; color: var(--muted); }
+.section-title {
+  font-size: 21px;
+  margin: 27px 0 13px;
+  color: var(--navy);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 17px 14px;
+  min-width: 0;
+}
+.card h3 { margin: 8px 0; font-size: 16px; }
+.card p {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.symbol {
+  font-size: 27px;
+  display: block;
+}
+.btn {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.notice {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.notice:last-child { border-bottom: 0; }
+.notice strong { display: block; }
+.small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.list-links {
+  display: grid;
+  gap: 10px;
+}
+.list-links a {
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+footer {
+  margin-top: 30px;
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 25px 16px;
+  line-height: 1.8;
+}
+footer p { margin: 5px 0; }
+@media (min-width: 650px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  main { padding: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <!-- असली लोगो लगाने के लिए logo.png फाइल भी अपलोड करें -->
+  <img class="logo" src="logo.png" alt="विद्यालय का लोगो"
+       onerror="this.style.display='none'">
+
+  <div class="school-name">+2 UHS KARUAJ</div>
+  <div class="location">DUMRAON, BUXAR, BIHAR</div>
+  <div class="motto">विद्या ददाति विनयम्</div>
+</header>
+
+<nav aria-label="मुख्य मेन्यू">
+  <a href="#home">🏠 Home</a>
+  <a href="#notices">📢 Notices</a>
+  <a href="#study">📚 Study</a>
+  <a href="#homework">📝 Homework</a>
+  <a href="#exam">📅 Exam</a>
+  <a href="#results">🎓 Results</a>
+  <a href="#contact">☎ Contact</a>
+</nav>
+
+<main>
+<section id="home" class="welcome">
+  <h2>🙏 हमारे विद्यालय में आपका स्वागत है!</h2>
+  <p>
+    विद्यालय की सूचनाएँ, पढ़ाई की सामग्री, गृहकार्य,
+    परीक्षा की जानकारी और उपयोगी लिंक एक ही जगह पर।
+  </p>
+</section>
+
+<h2 class="section-title">🌟 विद्यार्थी कॉर्नर</h2>
+<div class="grid">
+  <article class="card">
+    <span class="symbol">📢</span>
+    <h3>School Notices</h3>
+    <p>विद्यालय की सूचनाएँ और घोषणाएँ देखें।</p>
+    <a class="btn" href="#notices">नोटिस देखें</a>
+  </article>
+
+  <article class="card">
+    <span class="symbol">📚</span>
+    <h3>Study Zone</h3>
+    <p>पढ़ाई और विषयों की सामग्री के लिए।</p>
+    <a class="btn" href="#study">पढ़ाई खोलें</a>
+  </article>
+
+  <article class="card">
+    <span class="symbol">📝</span>
+    <h3>Homework</h3>
+    <p>कक्षा के अनुसार गृहकार्य की जानकारी।</p>
+    <a class="btn" href="#homework">होमवर्क देखें</a>
+  </article>
+
+  <article class="card">
+    <span class="symbol">📅</span>
+    <h3>Exam Timetable</h3>
+    <p>परीक्षा की समय-सारणी और निर्देश।</p>
+    <a class="btn" href="#exam">रूटीन देखें</a>
+  </article>
+
+  <article class="card">
+    <span class="symbol">🎓</span>
+    <h3>Results</h3>
+    <p>आधिकारिक परीक्षा परिणाम के लिंक।</p>
+    <a class="btn" href="#results">रिजल्ट देखें</a>
+  </article>
+
+  <article class="card">
+    <span class="symbol">🏫</span>
+    <h3>School Information</h3>
+    <p>विद्यालय से संबंधित जानकारी।</p>
+    <a class="btn" href="#school-info">जानकारी देखें</a>
+  </article>
+</div>
+
+<section id="notices">
+  <h2 class="section-title">📢 Latest Notices</h2>
+  <div class="card">
+    <!-- नोटिस जोड़ने के लिए नीचे की जगह बदलें -->
+    <div class="notice">
+      <strong>विद्यालय की सूचना</strong>
+      <span class="small">अभी कोई सत्यापित नया नोटिस नहीं जोड़ा गया है।</span>
+    </div>
+    <p class="small">
+      नई सूचना स्कूल से पुष्टि करने के बाद ही यहाँ प्रकाशित करें।
+    </p>
+  </div>
+</section>
+
+<section id="study">
+  <h2 class="section-title">📚 Study Zone</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>कक्षा 9–10</h3>
+      <p>पाठ्यपुस्तकें और अध्ययन सामग्री।</p>
+      <a class="btn"
+         href="https://scert.bihar.gov.in/"
+         target="_blank" rel="noopener">SCERT बिहार</a>
+    </article>
+    <article class="card">
+      <h3>कक्षा 11–12</h3>
+      <p>पाठ्यक्रम और शैक्षणिक जानकारी।</p>
+      <a class="btn"
+         href="https://biharboardonline.bihar.gov.in/"
+         target="_blank" rel="noopener">BSEB वेबसाइट</a>
+    </article>
+  </div>
+</section>
+
+<section id="homework">
+  <h2 class="section-title">📝 Homework</h2>
+  <div class="card">
+    <p>
+      विषयवार और कक्षावार गृहकार्य यहाँ जोड़ा जाएगा।
+      वर्तमान में कोई सत्यापित गृहकार्य प्रकाशित नहीं है।
+    </p>
+    <p class="small">
+      शिक्षक से मिले गृहकार्य को कोड में अपडेट किया जा सकता है।
+    </p>
+  </div>
+</section>
+
+<section id="exam">
+  <h2 class="section-title">📅 Exam Timetable</h2>
+  <div class="card">
+    <p>
+      परीक्षा की तिथि और समय विद्यालय की आधिकारिक सूचना
+      मिलने पर यहाँ जोड़े जाएँगे।
+    </p>
+    <a class="btn" href="https://biharboardonline.bihar.gov.in/"
+       target="_blank" rel="noopener">BSEB की वेबसाइट</a>
+  </div>
+</section>
+
+<section id="results">
+  <h2 class="section-title">🎓 Results & Useful Links</h2>
+  <div class="card list-links">
+    <a href="https://results.biharboardonline.com/"
+       target="_blank" rel="noopener">Bihar Board Results — परिणाम पोर्टल</a>
+    <a href="https://biharboardonline.bihar.gov.in/"
+       target="_blank" rel="noopener">Bihar School Examination Board</a>
+    <p class="small">
+      लिंक खुलने की उपलब्धता संबंधित विभाग पर निर्भर करती है।
+      अपना रोल नंबर या निजी जानकारी केवल आधिकारिक वेबसाइट पर भरें।
+    </p>
+  </div>
+</section>
+
+<section id="school-info">
+  <h2 class="section-title">🏫 School Information</h2>
+  <div class="card">
+    <p><strong>विद्यालय:</strong> +2 UHS KARUAJ</p>
+    <p><strong>स्थान:</strong> DUMRAON, BUXAR, BIHAR</p>
+    <p><strong>आदर्श वाक्य:</strong> विद्या ददाति विनयम्</p>
+    <p class="small">
+      अन्य विवरण सही जानकारी और पुष्टि मिलने पर जोड़े जाएँगे।
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">☎ Contact Us</h2>
+  <div class="card">
+    <p>
+      विद्यालय के सही संपर्क नंबर और पता की पुष्टि होने पर
+      यहाँ प्रकाशित करें।
+    </p>
+    <p class="small">
+      अभी कोई अपुष्ट फोन नंबर या ईमेल नहीं दिया गया है।
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>+2 UHS KARUAJ SCHOOL APP</strong>
+  <p>DUMRAON, BUXAR, BIHAR</p>
+  <p>विद्या ददाति विनयम्</p>
+  <p class="small" style="color:#d9e5f5">
+    विद्यार्थी सहायता हेतु बनाया गया एक शैक्षणिक वेब ऐप।
+    आधिकारिक स्कूल ऐप होने की पुष्टि नहीं है।
+  </p>
+</footer>
+
+</body>
+  </html>
+  
